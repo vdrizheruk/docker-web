@@ -6,3 +6,5 @@ Docker Container "WEB"
 
 ## start container
     sudo docker run -i -d -p 80:80 --name=web1 -t web:latest /start.sh
+## stop and remove container
+    sudo docker rm -f web4
