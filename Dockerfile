@@ -1,18 +1,15 @@
 FROM ubuntu:14.10
 
-RUN apt-get update && apt-get upgrade
+RUN apt-get update && apt-get upgrade -y
 
 # persistent / runtime deps
-RUN apt-get update && apt-get upgrade && apt-get install -y ca-certificates curl libpcre3 librecode0 libsqlite3-0  \
-libxml2 --no-install-recommends \
-# phpize deps
-php5-fpm php5-cli php5-gd php5-mysql php5-curl php5-mcrypt \
-# webserver
-nginx \
+RUN apt-get install --no-install-recommends -y ca-certificates curl libpcre3 librecode0 libsqlite3-0 libxml2 \ 
+# nginx + php
+ nginx php5-fpm php5-cli php5-gd php5-mysql php5-curl php5-mcrypt \ 
 # programs
-mc nano git htop wget lynx links curl \
+ mc nano git htop wget lynx links curl \ 
 # services
-supervisor
+ supervisor
 
 WORKDIR /
 
