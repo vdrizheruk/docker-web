@@ -15,6 +15,13 @@ WORKDIR /
 
 COPY etc /etc
 
-COPY start.sh /start.sh
 
-CMD ["/start.sh"]
+# mysql
+RUN groupadd -r mysql && useradd -r -g mysql mysql
+
+COPY start.sh /start.sh
+#CMD ["/start.sh"]
+
+EXPOSE 80
+
+ENTRYPOINT ["/start.sh"]
