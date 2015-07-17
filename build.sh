@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo docker build --no-cache=true -t vdrizheruk/web .
+docker build --no-cache=true -t vdrizheruk/web .
