@@ -5,7 +5,7 @@ Docker Container "WEB"
     sudo docker build -t web .
 
 ## start container
-    sudo docker run -i -d -p 80:80 --name=web1 -t web:latest /start.sh
+    sudo docker run -id -p 80 --name web1 web
 ## stop and remove container
     sudo docker rm -f web1
 ## rename existed container
